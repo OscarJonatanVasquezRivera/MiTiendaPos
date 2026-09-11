@@ -1,0 +1,59 @@
+# Visual Studio / .NET
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+/bin/
+/obj/
+**/bin/
+**/obj/
+/publish/
+/out/
+/artifacts/
+
+# NuGet
+*.nupkg
+/packages/
+/.nuget/packages/
+project.lock.json
+project.fragment.lock.json
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+*.DotSettings.user
+_ReSharper*/
+*.DotSettings
+
+# Visual Studio Code
+.vscode/
+
+# User-specific files
+*.user
+*.userprefs
+*.pidb
+*.log
+
+# Database files
+*.mdf
+*.ldf
+*.sqlite
+*.db
+*.db-journal
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Secrets / local configuration
+secrets.json
+appsettings.*.Local.json
+appsettings.*.Secrets.json
+
+# Misc
+*.ide
+/.history/
