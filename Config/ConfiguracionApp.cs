@@ -1,13 +1,13 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace MiTiendaPOS.Config
+namespace MiTiendaPos.Config
 {
     public static class ConfiguracionApp
     {
         private const string Archivo = "appsettings.json";
 
         public static string ObtenerCadenaConexion(
-            string nombre = "MiTiendaPOSDb")
+            string nombre = "MiTiendaPosDb")
         {
             // 1) Carpeta del ejecutable (bin) -> aplicación en ejecución
             // 2) Carpeta actual -> herramientas de migración

@@ -21,16 +21,16 @@ namespace MiTiendaPos
                 int pendientes = contexto.Database.GetPendingMigrations().Count();
 
                 MessageBox.Show(
-                    $"Conexión a MiTiendaPOSDb: {(conecta ? "OK" : "FALLÓ")}\n" +
+                    $"Conexión a MiTiendaPosDb: {(conecta ? "OK" : "FALLÓ")}\n" +
                     $"Categorías registradas: {categorias}\n" +
                     $"Usuarios registrados: {usuarios}\n" +
                     $"Migraciones pendientes: {pendientes}",
-                    "MiTiendaPOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    "MiTiendaPos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }   // <- al salir del bloque try se ejecuta Dispose() del contexto
                 // El manejo de excepciones se profundiza en la Unidad 4
             catch (Exception ex)
             {
-                MessageBox.Show("Error al conectar: " + ex.Message, "MiTiendaPOS",
+                MessageBox.Show("Error al conectar: " + ex.Message, "MiTiendaPos",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 

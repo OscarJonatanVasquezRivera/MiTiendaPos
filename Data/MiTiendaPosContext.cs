@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
 using MiTiendaPos.Models;
-using MiTiendaPOS.Config;
+using MiTiendaPos.Config;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using MiTiendaPos.Config;
 
 namespace MiTiendaPos.Data
 {
