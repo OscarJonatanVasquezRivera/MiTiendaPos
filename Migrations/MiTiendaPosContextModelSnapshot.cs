@@ -66,7 +66,6 @@ namespace MiTiendaPos.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Correo")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -76,13 +75,25 @@ namespace MiTiendaPos.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Telefono")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Clientes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Nombre = "Consumidor final"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Nombre = "María López",
+                            Telefono = "70000000"
+                        });
                 });
 
             modelBuilder.Entity("MiTiendaPos.Models.DetalleVenta", b =>
@@ -144,6 +155,62 @@ namespace MiTiendaPos.Migrations
                     b.HasIndex("CategoriaId");
 
                     b.ToTable("Productos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Activo = true,
+                            CategoriaId = 1,
+                            Nombre = "Agua",
+                            PrecioUnitario = 15.00m,
+                            Stock = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Activo = true,
+                            CategoriaId = 2,
+                            Nombre = "Arroz",
+                            PrecioUnitario = 45.00m,
+                            Stock = 0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Activo = true,
+                            CategoriaId = 3,
+                            Nombre = "Detergente",
+                            PrecioUnitario = 30.00m,
+                            Stock = 0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Activo = true,
+                            CategoriaId = 1,
+                            Nombre = "Refresco",
+                            PrecioUnitario = 20.00m,
+                            Stock = 0
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Activo = true,
+                            CategoriaId = 2,
+                            Nombre = "Frijoles",
+                            PrecioUnitario = 50.00m,
+                            Stock = 0
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Activo = true,
+                            CategoriaId = 3,
+                            Nombre = "Jabón",
+                            PrecioUnitario = 25.00m,
+                            Stock = 0
+                        });
                 });
 
             modelBuilder.Entity("MiTiendaPos.Models.Usuario", b =>
@@ -174,6 +241,12 @@ namespace MiTiendaPos.Migrations
                             Id = 1,
                             NombreUsuario = "admin",
                             Rol = "Administrador"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            NombreUsuario = "Cajero1",
+                            Rol = "Cajero"
                         });
                 });
 
