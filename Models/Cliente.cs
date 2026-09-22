@@ -15,7 +15,7 @@ namespace MiTiendaPos.Models
         [MaxLength(100)]
         public string Nombre { get; set; }
 
-        [MaxLength(50)]
+        [MaxLength(100)]
         public string Correo { get; set; }
 
         [MaxLength(20)]
