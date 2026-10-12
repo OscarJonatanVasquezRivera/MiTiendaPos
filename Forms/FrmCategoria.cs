@@ -33,7 +33,7 @@ namespace MiTiendaPos.Forms
                 .ToList();
         }
 
-        private void LimpiarFormulario()
+        private void LimpiarFormulario() 
         {
             _idSeleccionado = 0;
             txtNombre.Clear();
@@ -41,7 +41,7 @@ namespace MiTiendaPos.Forms
             dgvCategorias.ClearSelection();
             txtNombre.Focus();
 
-        }
+        }   
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (_idSeleccionado == 0) return;
@@ -53,7 +53,7 @@ namespace MiTiendaPos.Forms
                 try
                 {
 
-                }
+        }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error al eliminar la categoría: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -78,7 +78,7 @@ namespace MiTiendaPos.Forms
             _idSeleccionado = categoria.Id;
             txtNombre.Text = categoria.Nombre;
             btnEliminar.Enabled = true;
-        }
+    }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
