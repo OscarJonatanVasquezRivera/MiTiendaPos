@@ -1,4 +1,5 @@
-﻿using MiTiendaPos.Services;
+﻿using MiTiendaPos.Models;
+using MiTiendaPos.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,9 +52,65 @@ namespace MiTiendaPos.Forms
             {
                 try
                 {
-                    _servicio;Elim
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al eliminar la categoría: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            CargarCategorias();
+        }
+
+        private void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var fila = dgvCategorias.Rows[e.RowIndex];
+            int id = Convert.ToInt32(fila.Cells["Id"].Value);
+            Categoria? categoria = _servicio.ObtenerPorId(id);
+            if (categoria == null) return;
+
+            _idSeleccionado = categoria.Id;
+            txtNombre.Text = categoria.Nombre;
+            btnEliminar.Enabled = true;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var categoria = new Categoria
+                {
+                    Id = _idSeleccionado,
+                    Nombre = txtNombre.Text
+                };
+                if (_idSeleccionado == 0)
+                    _servicio.Crear(categoria);
+
+                else
+                    _servicio.Actualizar(categoria);
+                MessageBox.Show("Categoria guardada cone exito,", "MiTIendaPOS",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarCategorias();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "No se pudo guardar",
+                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CargarCategorias();
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario();
         }
     };
 }

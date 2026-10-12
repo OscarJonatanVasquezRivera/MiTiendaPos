@@ -12,7 +12,7 @@ namespace MiTiendaPos.Services
     {
         // ----- Catálogos para los ComboBox (tablas de las que depende) -----
         public List<Cliente> ListarClientes()
-        { 
+        {
             using var ctx = new MiTiendaPosContext();
             return ctx.Clientes.AsNoTracking()
                 .OrderBy(c => c.Nombre)
@@ -49,8 +49,8 @@ namespace MiTiendaPos.Services
         {
             using var ctx = new MiTiendaPosContext();
             return ctx.Ventas.AsNoTracking()
-                .Include(v=> v.Detalles)        // JOIN con DetallesVenta
-                .ThenInclude(d=> d.Producto)    // JOIN con Productos
+                .Include(v => v.Detalles)        // JOIN con DetallesVenta
+                .ThenInclude(d => d.Producto)    // JOIN con Productos
                 .FirstOrDefault(v => v.Id == Id);
         }
 
@@ -154,4 +154,5 @@ namespace MiTiendaPos.Services
 
 
 
+    }
 }

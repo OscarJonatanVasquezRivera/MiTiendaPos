@@ -18,6 +18,6 @@ namespace MiTiendaPos.Models
 
         [Column(TypeName = "decimal(10,2)")]
         public decimal Subtotal { get; set; }
-        public int Cantidad { get; internal set; }
+        public int Cantidad { get; set; }
     }
 }

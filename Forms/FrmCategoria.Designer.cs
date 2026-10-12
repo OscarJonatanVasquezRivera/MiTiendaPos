@@ -71,6 +71,7 @@
             dgvCategorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCategorias.Size = new Size(398, 319);
             dgvCategorias.TabIndex = 2;
+            dgvCategorias.CellContentClick += dgvCategorias_CellContentClick;
             // 
             // grpDatos
             // 
@@ -104,6 +105,7 @@
             btnGuardar.TabIndex = 3;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnNuevo
             // 
@@ -113,6 +115,7 @@
             btnNuevo.TabIndex = 2;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // txtNombre
             // 
