@@ -104,6 +104,9 @@ namespace MiTiendaPos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("PrecioUnitario")
                         .HasColumnType("decimal(10,2)");
 
@@ -163,7 +166,7 @@ namespace MiTiendaPos.Migrations
                             Activo = true,
                             CategoriaId = 1,
                             Nombre = "Agua",
-                            PrecioUnitario = 15.00m,
+                            PrecioUnitario = 0.15m,
                             Stock = 0
                         },
                         new
@@ -172,7 +175,7 @@ namespace MiTiendaPos.Migrations
                             Activo = true,
                             CategoriaId = 2,
                             Nombre = "Arroz",
-                            PrecioUnitario = 45.00m,
+                            PrecioUnitario = 0.45m,
                             Stock = 0
                         },
                         new
@@ -181,7 +184,7 @@ namespace MiTiendaPos.Migrations
                             Activo = true,
                             CategoriaId = 3,
                             Nombre = "Detergente",
-                            PrecioUnitario = 30.00m,
+                            PrecioUnitario = 0.30m,
                             Stock = 0
                         },
                         new
@@ -190,7 +193,7 @@ namespace MiTiendaPos.Migrations
                             Activo = true,
                             CategoriaId = 1,
                             Nombre = "Refresco",
-                            PrecioUnitario = 20.00m,
+                            PrecioUnitario = 0.20m,
                             Stock = 0
                         },
                         new
@@ -199,7 +202,7 @@ namespace MiTiendaPos.Migrations
                             Activo = true,
                             CategoriaId = 2,
                             Nombre = "Frijoles",
-                            PrecioUnitario = 50.00m,
+                            PrecioUnitario = 0.50m,
                             Stock = 0
                         },
                         new
@@ -208,7 +211,7 @@ namespace MiTiendaPos.Migrations
                             Activo = true,
                             CategoriaId = 3,
                             Nombre = "Jabón",
-                            PrecioUnitario = 25.00m,
+                            PrecioUnitario = 0.25m,
                             Stock = 0
                         });
                 });

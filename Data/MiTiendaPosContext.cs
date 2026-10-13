@@ -72,12 +72,12 @@ namespace MiTiendaPos.Data
             );
 
             modelBuilder.Entity<Producto>().HasData(
-                new Producto { Id = 1, Nombre = "Agua", PrecioUnitario = 15.00m, CategoriaId = 1 },
-                new Producto { Id = 2, Nombre = "Arroz", PrecioUnitario = 45.00m, CategoriaId = 2 },
-                new Producto { Id = 3, Nombre = "Detergente", PrecioUnitario = 30.00m, CategoriaId = 3 },
-                new Producto { Id = 4, Nombre = "Refresco", PrecioUnitario = 20.00m, CategoriaId = 1 },
-                new Producto { Id = 5, Nombre = "Frijoles", PrecioUnitario = 50.00m, CategoriaId = 2 },
-                new Producto { Id = 6, Nombre = "Jabón", PrecioUnitario = 25.00m, CategoriaId = 3 });
+                new Producto { Id = 1, Nombre = "Agua", PrecioUnitario = 0.15m, CategoriaId = 1 },
+                new Producto { Id = 2, Nombre = "Arroz", PrecioUnitario = 0.45m, CategoriaId = 2 },
+                new Producto { Id = 3, Nombre = "Detergente", PrecioUnitario = 0.30m, CategoriaId = 3 },
+                new Producto { Id = 4, Nombre = "Refresco", PrecioUnitario = 0.20m, CategoriaId = 1 },
+                new Producto { Id = 5, Nombre = "Frijoles", PrecioUnitario = 0.50m, CategoriaId = 2 },
+                new Producto { Id = 6, Nombre = "Jabón", PrecioUnitario = 0.25m, CategoriaId = 3 });
 
             modelBuilder.Entity<Cliente>().HasData(
                 new Cliente { Id = 1, Nombre = "Consumidor final" },
